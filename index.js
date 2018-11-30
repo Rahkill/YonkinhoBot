@@ -3,7 +3,7 @@ const bot =  new Discord.Client();
 const config = require('./config.json');
 const links = require('./links.json');
 
-
+/*
 //heroku
 const express = require('express');
 const path = require('path');
@@ -15,7 +15,7 @@ express()
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
   .listen(PORT, () => console.log('Listening on ${ PORT }'))
-  
+  */
   // comandos quando o bot estiver pronto
 bot.on('ready', () => {
     bot.user.setActivity('twitch.tv/yonkjr');
