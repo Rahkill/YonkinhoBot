@@ -1,7 +1,7 @@
 {
   "name": "YonkinhoBot",
   "version": "1.0.0",
-  "description": "BotDS",
+  "description": "YonkinhoBot",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
