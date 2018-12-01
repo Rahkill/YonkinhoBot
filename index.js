@@ -16,8 +16,11 @@ express()
   .get('/', (req, res) => res.render('pages/index'))
   .listen(PORT, () => console.log('Listening on ${ PORT }'))
   */
-  // comandos quando o bot estiver pronto
+
+
+ // comandos quando o bot estiver pronto
 bot.on('ready', () => {
+    // bot "jogando/assistindo/ouvindo/streamando"
     bot.user.setActivity('twitch.tv/yonkjr');
     console.log('bot logado!');
 });
@@ -34,7 +37,7 @@ bot.on('message', message => {
 
     const msgs = message.content.slice(config.prefix.lenght).trim().split(/ +/g);
     //transformar os comandos em minusculo
-    const comando = msgs.shift().toLocaleLowerCase();
+    const comando = msgs.shift().toLowerCase();
 
     responseObject = links;
     if (responseObject[message.content]){
