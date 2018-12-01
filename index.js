@@ -21,7 +21,9 @@ express()
  // comandos quando o bot estiver pronto
 bot.on('ready', () => {
     // bot "jogando/assistindo/ouvindo/streamando"
-    bot.user.setActivity('twitch.tv/yonkjr');
+    //bot.user.setActivity('twitch.tv/yonkjr');
+    bot.user.setActivity('${bot.users.size} users', {type: "Watching"});
+  
     console.log('bot logado!');
 });
 
