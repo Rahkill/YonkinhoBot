@@ -28,7 +28,8 @@ bot.on('message', message => {
     const args = message.content.slice(config.prefix.lenght).trim().split(/ +/g);
     //transformar os comandos em minusculo
     const command = args.shift().toLowerCase();
-  
+ 
+    console.log('Args: $({args} \nCommand: ${command}');
 
     
   
