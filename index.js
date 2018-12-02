@@ -14,7 +14,7 @@ bot.on('ready', () => {
 });
 
 // comandos de mensagens de usuário
-bot.on('message', async message => {
+bot.on('message', message => {
     
     msg = message.content.toLowerCase();
     if (message.author.bot){
