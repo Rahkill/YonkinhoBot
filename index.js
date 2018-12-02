@@ -15,18 +15,18 @@ bot.on('ready', () => {
 
 // comandos de mensagens de usuário
 bot.on('message', async message => {
-    const args = message.content.slice(config.prefix.lenght).trim().split(/ +/g);
-    //transformar os comandos em minusculo
-    const command = args.shift().toLowerCase();
-    msg = message.content.toLowerCase();
-    if (msg.author.bot){
+    
+    //msg = message.content.toLowerCase();
+    if (message.author.bot){
         return indefined;
     }
 
-    if (msg.content.indexOf(config.prefix) !== 0){
+    if (message.content.indexOf(config.prefix) !== 0){
         return;
     }
   
+    const args = message.content.slice(prefix.length).trim().split(/ +/g);
+    const command = args.shift().toLowerCase();
   
 
     
