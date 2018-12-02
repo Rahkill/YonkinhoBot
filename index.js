@@ -25,7 +25,8 @@ bot.on('message', async message => {
         return;
     }
   
-    const args = message.content.slice(prefix.length).trim().split(/ +/g);
+    const args = message.content.slice(config.prefix.lenght).trim().split(/ +/g);
+    //transformar os comandos em minusculo
     const command = args.shift().toLowerCase();
   
 
