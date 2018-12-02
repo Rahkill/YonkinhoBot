@@ -29,7 +29,7 @@ bot.on('message', message => {
     //transformar os comandos em minusculo
     const command = args.shift().toLowerCase();
  
-    console.log('Args: ${args} \nCommand: ${command}');
+    console.log(´Args: ${args} \nCommand: ${command}´);
 
     
   
