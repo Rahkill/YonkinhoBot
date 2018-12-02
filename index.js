@@ -3,9 +3,7 @@ const bot =  new Discord.Client();
 const config = require('./config.json');
 const links = require('./links.json');
 
-const args = message.content.slice(config.prefix.lenght).trim().split(/ +/g);
-//transformar os comandos em minusculo
-const command = args.shift().toLowerCase();
+
 
  // comandos quando o bot estiver pronto
 bot.on('ready', () => {
@@ -25,6 +23,10 @@ bot.on('message', async message => {
     if (message.content.indexOf(config.prefix) !== 0){
         return;
     }
+  
+  const args = message.content.slice(config.prefix.lenght).trim().split(/ +/g);
+  //transformar os comandos em minusculo
+  const command = args.shift().toLowerCase();
 
     
   
@@ -37,8 +39,7 @@ bot.on('message', async message => {
     }
 
    
-
-    });
+});
     
     
 bot.login(config.token);
