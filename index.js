@@ -18,7 +18,7 @@ bot.on('message', message => {
     
     msg = message.content.toLowerCase();
     if (message.author.bot){
-        return indefined;
+        return;
     }
 
     if (message.content.indexOf(config.prefix) !== 0){
