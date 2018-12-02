@@ -38,7 +38,9 @@ bot.on('message', message => {
 
     responseObject = links;
     if (responseObject[message.content]){
-        message.channel.send(responseObject[message.content]);
+        message.channel.send().then(m => {
+          m.edit(responseObject[message.content]);
+        });
     }
 
    
