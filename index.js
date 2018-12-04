@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const bot =  new Discord.Client();
 //const config = require('./config.json');
 const links = require('./links.json');
+const prefix = process.env.PREFIX
 
 
 
@@ -24,13 +25,13 @@ bot.on('ready', () => {
 // comandos de mensagens de usuário
 bot.on('message', async message => {
     let msg = message.content.toLocaleLowerCase();
-    let command = message.content.slice(config.prefix.lenght).trim().split(/ +/g);
+    let command = message.content.slice(prefix.lenght).trim().split(/ +/g);
 
     if (message.author.bot){
         return;
     }
 
-    if (message.content.indexOf(config.prefix) !== 0){
+    if (message.content.indexOf(prefix) !== 0){
         return;
     } 
 
@@ -39,11 +40,11 @@ bot.on('message', async message => {
     
 
     switch (command[0].toLocaleLowerCase()) {
-        case (config.prefix + "comandos") :
+        case (prefix + "comandos") :
             message.channel.send("``!fb !twitter !insta !live !steam !quest``");
             break;
            
-        case (config.prefix + "fb") :
+        case (prefix + "fb") :
             //message.channel.send("Entre no nosso grupo do Facebook - https://www.facebook.com/groups/1240399676042202/");
             const embed = {
                 "title": "Entre no nosso grupo do Facebook!",
@@ -56,27 +57,27 @@ bot.on('message', async message => {
               message.channel.send({ embed });
             break;
             
-        case (config.prefix + "twitter") :
+        case (prefix + "twitter") :
             message.channel.send("Me siga no twitter - https://twitter.com/YonkJunior");
             break;
 
-        case (config.prefix + "insta") :
+        case (prefix + "insta") :
             message.channel.send("Siga-me no instagram - https://www.instagram.com/joaoriosjr/");
             break;
 
-        case (config.prefix + "steam") :
+        case (prefix + "steam") :
             message.channel.send("Grupo do Steam - https://steamcommunity.com/groups/YonkLives");
             break;
 
-        case (config.prefix + "quest") :
+        case (prefix + "quest") :
             message.channel.send("Sub grátis! Faça as quests e troque os pontos por um sub - https://bitbossbattles.io/freetips/yonkjr");
             break;
 
-        case (config.prefix + "pc") :
+        case (prefix + "pc") :
             message.channel.send("```======= Gaming PC ======= \n\nCPU: AMD FX-8350 Vishera @4.0Ghz \nWaterCooler: CoolerMaster Seidon 120V \nMotherboard: Asus AMD AM3+ 220W M5A99FX \nGPU: GIGABYTE RADEON RX 580 4GB \nHDD: 1TB Seagate Barracuda 7200rpm \nPSU: EVGA 750W 80 Plus Bronze \nRAM: Corsair 16gb DDR3 1600MHz```");
             break;
 
-        case (config.prefix + "live") :
+        case (prefix + "live") :
             message.channel.send("Live todo dia, quem diria! A partir das 10h da manhã - https://www.twitch.tv/yonkjr");
             break;
         
