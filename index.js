@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const bot =  new Discord.Client();
-const config = require('./config.json');
+//const config = require('./config.json');
 const links = require('./links.json');
 
 
@@ -10,7 +10,7 @@ bot.on('ready', () => {
     // bot "jogando/assistindo/ouvindo/streamando"
     bot.user.setActivity('twitch.tv/yonkjr', {type: "Watching"});
 
-    console.log('bot logado!');
+    console.log('bot on!');
 });
 
 // comandos de mensagens de usuário
@@ -21,11 +21,11 @@ bot.on('message', message => {
         return;
     }
 
-    if (message.content.indexOf(config.prefix) !== 0){
+    if (message.content.indexOf(PREFIX) !== 0){
         return;
     }
   
-    const args = message.content.slice(config.prefix.lenght).trim().split(/ +/g);
+    const args = message.content.slice(PREFIX.lenght).trim().split(/ +/g);
     //transformar os comandos em minusculo
     const command = args.shift().toLowerCase();
  
@@ -45,4 +45,4 @@ bot.on('message', message => {
 });
     
     
-bot.login(config.token);
+bot.login(TOKEN);
