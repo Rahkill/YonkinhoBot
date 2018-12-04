@@ -13,7 +13,7 @@ bot.on('ready', () => {
     // bot "jogando/assistindo/ouvindo/streamando"
     bot.user.setActivity('twitch.tv/yonkjr', {type: "Watching"});
 
-    console.log('bot logado!');
+    console.log('bot on!');
 
     
 });
