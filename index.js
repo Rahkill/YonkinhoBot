@@ -3,6 +3,7 @@ const bot =  new Discord.Client();
 //const config = require('./config.json');
 const links = require('./links.json');
 const prefix = process.env.PREFIX
+const token = process.env.TOKEN
 
 
 
@@ -113,4 +114,4 @@ bot.on('message', async message => {
     });
     
     
-bot.login(proces.env.TOKEN);
+bot.login(token);
