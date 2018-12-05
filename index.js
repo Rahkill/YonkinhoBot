@@ -40,7 +40,7 @@ bot.on('message', async message => {
 
     switch (command[0].toLocaleLowerCase()) {
         case (prefix + "comandos") :
-            message.channel.send("``!fb !pc !twitter !insta !live !steam !quest``");
+            message.channel.send("``!fb !pc !twitter !insta !twitch !steam !quest``");
             break;
            
         case (prefix + "fb") :
@@ -76,9 +76,20 @@ bot.on('message', async message => {
             message.channel.send("```======= Gaming PC ======= \n\nCPU: AMD FX-8350 Vishera @4.0Ghz \nWaterCooler: CoolerMaster Seidon 120V \nMotherboard: Asus AMD AM3+ 220W M5A99FX \nGPU: GIGABYTE RADEON RX 580 4GB \nHDD: 1TB Seagate Barracuda 7200rpm \nPSU: EVGA 750W 80 Plus Bronze \nRAM: Corsair 16gb DDR3 1600MHz```");
             break;
 
-        case (prefix + "live") :
-            message.channel.send("Live todo dia, quem diria! A partir das 10h da manhã - https://www.twitch.tv/yonkjr");
+        case (prefix + "twitch") :
+            message.channel.send("Live todo dia, quem diria! A partir das 10h da manhã - <https://www.twitch.tv/yonkjr>");
             break;
+      
+      case (prefix + "live") :
+        if(message.member.roles.some(r=>["Admin"].includes(r.name)) ) {
+            // has one of the roles
+            message.channel.send(" @everyone ATENÇÃO! LIVE ON - https://www.twitch.tv/yonkjr");
+            break;
+          } else {
+            // has none of the roles
+            message.channel.send("Você não tem permissão para o usar o comando!");
+            break;
+          }
         
         default:
             //message.channel.send("Comando inválido!");
