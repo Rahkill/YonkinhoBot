@@ -42,7 +42,7 @@ bot.on('message', async message => {
 
     switch (command[0].toLocaleLowerCase()) {
         case (prefix + "comandos") :
-            message.channel.send("``!fb !twitter !insta !live !steam !quest``");
+            message.channel.send("``!fb !pc !twitter !insta !live !steam !quest``");
             break;
            
         case (prefix + "fb") :
